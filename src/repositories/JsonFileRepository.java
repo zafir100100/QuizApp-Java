@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -105,6 +108,44 @@ public class JsonFileRepository implements JsonFileService {
             System.out.println(ex.getMessage());
             ex.printStackTrace();
             return false;
+        }
+    }
+
+    @Override
+    public List<Map<String, String>> getAllRow(List<String> keys) {
+        try {
+            // create JsonFile If Does Not Exist
+            boolean doesFileExist = createJsonFileIfDoesnNotExist();
+            if (!doesFileExist) {
+                return null;
+            }
+
+            // read the file
+            FileReader fr = new java.io.FileReader(fileName);
+            org.json.simple.parser.JSONParser parser = new JSONParser();
+
+            // get old file content
+            Object obj = parser.parse(fr);
+            JSONArray jsonArray = (JSONArray) obj;
+
+            List<Map<String, String>> output = new ArrayList<>();
+            jsonArray.forEach(item -> {
+                JSONObject jsonObject = (JSONObject) item;
+                Map<String, String> map = new HashMap<>();
+                System.out.println(jsonObject);
+                keys.forEach(element -> {
+                    if (jsonObject.get(element) != null) {
+                        map.put(element, jsonObject.get(element).toString());
+                    }
+                });
+                output.add(map);
+            });
+            return output;
+        } catch (Exception ex) {
+            System.out.println("Random rows retrieval failed");
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
+            return null;
         }
     }
 }

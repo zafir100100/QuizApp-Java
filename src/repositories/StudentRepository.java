@@ -17,13 +17,14 @@ public class StudentRepository implements StudentService {
     public boolean getLogin(String username, String password) {
         return username.equals("student") && password.equals("3333");
     }
-    
+
     @Override
     public boolean addStudent(String username, String password) {
         try {
             Map<String, String> map = new HashMap<>();
             map.put("username", username);
             map.put("password", password);
+            map.put("marks", "0");
             map.put("role", "student");
             return true;
         } catch (Exception ex) {

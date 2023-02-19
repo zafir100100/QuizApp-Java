@@ -4,6 +4,9 @@
  */
 package quizapp;
 
+import java.util.HashMap;
+import repositories.JsonFileRepository;
+
 /**
  *
  * @author x
@@ -15,6 +18,14 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        HashMap<String, String> map = new HashMap<>();
+        map.put("1", "Mango");  //Put elements in Map  
+        map.put("2", "Apple");
+        map.put("3", "Banana");
+        map.put("4", "Grapes");
+        JsonFileRepository j = new JsonFileRepository("resources/databases/questions.json");
+        j.createItemsInJsonFile(map);
+
     }
-    
+
 }

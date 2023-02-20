@@ -104,7 +104,7 @@ public class AddStudent extends javax.swing.JFrame {
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         // TODO add your handling code here:
-        boolean isCreated = adminService.createStudent(username.getText(), String.valueOf(password));
+        boolean isCreated = adminService.createStudent(username.getText(), String.valueOf(password.getPassword()));
         if (isCreated) {
             JOptionPane.showMessageDialog(null, "Student addition successful!");
         } else {

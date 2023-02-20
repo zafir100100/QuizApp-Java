@@ -254,26 +254,21 @@ public class JsonFileRepository implements JsonFileService {
             // get old file content
             Object obj = parser.parse(fr);
             JSONArray jsonArray = (JSONArray) obj;
-
-            // add result
-            for (Object item : jsonArray) {
-                JSONObject jsonObject = (JSONObject) item;
-                for (Entry<String, String> condition : conditions.entrySet()) {
-                    if (jsonObject.containsKey(condition.getKey()) && jsonObject.get(condition.getKey()).equals(condition.getValue())) {
-                        updatedValues.entrySet().forEach(entry -> {
-                            if (jsonObject.get(entry.getKey()) != null) {
-                                jsonArray.remove(item);
-                                jsonObject.remove(entry.getKey());
-                                jsonObject.put(entry.getKey(), entry.getValue());
-                                jsonArray.add(jsonObject);
-                            }
-                        });
-                    } else {
-                        return false;
+            
+            // update value
+            int l = jsonArray.size();
+            for (int i = 0; i < l; i++) {
+                JSONObject jsonObject = (JSONObject) jsonArray.get(i);
+                for (Entry<String, String> entry : updatedValues.entrySet()) {
+                    if (jsonObject.get(entry.getKey()) != null) {
+                        jsonArray.remove(jsonObject);
+                        jsonObject.remove(entry.getKey());
+                        jsonObject.put(entry.getKey(), entry.getValue());
+                        jsonArray.add(jsonObject);
                     }
                 }
             }
-
+            
             // write to file
             FileWriter fw = new FileWriter(fileName);
             fw.write(jsonArray.toJSONString());
@@ -284,7 +279,7 @@ public class JsonFileRepository implements JsonFileService {
             fr.close();
             return true;
         } catch (Exception ex) {
-            System.out.println("All rows retrieval failed");
+            System.out.println("row update failed");
             System.out.println(ex.getMessage());
             ex.printStackTrace();
             return false;

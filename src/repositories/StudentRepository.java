@@ -1,6 +1,7 @@
 package repositories;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,7 +18,33 @@ public class StudentRepository implements StudentService {
 
     @Override
     public boolean getLogin(String username, String password) {
-        return username.equals("student") && password.equals("3333");
+        List<String> keys = Arrays.asList(new String[]{"username", "password"});
+        Map<String, String> conditions = new HashMap<String, String>() {
+            {
+                put("username", username);
+                put("password", password);
+            }
+        };
+        List<Map<String, String>> students = jfs.getAllRowByCondition(keys, conditions);
+
+        if (!students.isEmpty() && students.size() >= 2) {
+            for (Map<String, String> element : students) {
+                if (element.containsKey("username")) {
+                    if (element.get("username").equals(username)) {
+
+                    } else {
+                        return false;
+                    }
+                } else if (element.containsKey("password")) {
+                    if (element.get("password").equals(password)) {
+
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
     }
 
     @Override

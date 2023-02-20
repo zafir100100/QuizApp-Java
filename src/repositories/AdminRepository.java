@@ -17,7 +17,7 @@ public class AdminRepository implements AdminService {
 
     @Override
     public boolean getLogin(String username, String password) {
-        return username.equals("admin") && password.equals("123456789");
+        return username.equals("admin") && password.equals("admin");
     }
 
     @Override

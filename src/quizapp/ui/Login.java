@@ -51,14 +51,14 @@ public class Login extends javax.swing.JFrame {
 
         jLabel2.setText("password");
 
-        username.setText("admin");
+        username.setText("a");
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameActionPerformed(evt);
             }
         });
 
-        password.setText("123456789");
+        password.setText("1");
 
         login.setText("login");
         login.addActionListener(new java.awt.event.ActionListener() {

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Random;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -211,35 +212,20 @@ public class JsonFileRepository implements JsonFileService {
             Object obj = parser.parse(fr);
             JSONArray jsonArray = (JSONArray) obj;
 
+            // add result
             List<Map<String, String>> output = new ArrayList<>();
-
-            jsonArray.forEach(item -> {
+            for (Object item : jsonArray) {
                 JSONObject jsonObject = (JSONObject) item;
-                Map<String, String> map = new HashMap<>();
-
-                // check if all required key is present
-                keys.forEach(element -> {
-                    if (jsonObject.get(element) != null) {
-                        String isConditionMet = "1";
-                        // check if each condition met
-                        conditions.entrySet().forEach(entry -> {
-                            if (jsonObject.get(entry.getKey()) != null && jsonObject.get(entry.getKey()).equals(entry.getValue())) {
-                            } else {
-                                isConditionMet.replace("1", "0");
-                                return;
+                for (Entry<String, String> condition : conditions.entrySet()) {
+                    if (jsonObject.containsKey(condition.getKey()) && jsonObject.get(condition.getKey()).equals(condition.getValue())) {
+                        output.add(new HashMap<String, String>() {
+                            {
+                                put(condition.getKey(), condition.getValue());
                             }
                         });
-                        // if each condition met, add to map
-                        // else, reset condition checking
-                        if (isConditionMet.equals("1")) {
-                            map.put(element, jsonObject.get(element).toString());
-                        } else {
-                            isConditionMet.replace("0", "1");
-                        }
                     }
-                });
-                output.add(map);
-            });
+                }
+            }
 
             parser.reset();
             fr.close();
@@ -269,41 +255,24 @@ public class JsonFileRepository implements JsonFileService {
             Object obj = parser.parse(fr);
             JSONArray jsonArray = (JSONArray) obj;
 
-            List<Map<String, String>> output = new ArrayList<>();
-
-            jsonArray.forEach(item -> {
+            // add result
+            for (Object item : jsonArray) {
                 JSONObject jsonObject = (JSONObject) item;
-                Map<String, String> map = new HashMap<>();
-
-                // check if all required key is present
-                keys.forEach(element -> {
-                    if (jsonObject.get(element) != null) {
-                        String isConditionMet = "1";
-                        // check if each condition met
-                        conditions.entrySet().forEach(entry -> {
-                            if (jsonObject.get(entry.getKey()) != null && jsonObject.get(entry.getKey()).equals(entry.getValue())) {
-                            } else {
-                                isConditionMet.replace("1", "0");
-                                return;
+                for (Entry<String, String> condition : conditions.entrySet()) {
+                    if (jsonObject.containsKey(condition.getKey()) && jsonObject.get(condition.getKey()).equals(condition.getValue())) {
+                        updatedValues.entrySet().forEach(entry -> {
+                            if (jsonObject.get(entry.getKey()) != null) {
+                                jsonArray.remove(item);
+                                jsonObject.remove(entry.getKey());
+                                jsonObject.put(entry.getKey(), entry.getValue());
+                                jsonArray.add(jsonObject);
                             }
                         });
-                        // if each condition met, update the value
-                        // else, reset condition checking
-                        if (isConditionMet.equals("1")) {
-                            updatedValues.entrySet().forEach(entry -> {
-                                if (jsonObject.get(entry.getKey()) != null) {
-                                    jsonArray.remove(item);
-                                    jsonObject.remove(entry.getKey());
-                                    jsonObject.put(entry.getKey(), entry.getValue());
-                                    jsonArray.add(jsonObject);
-                                }
-                            });
-                        } else {
-                            isConditionMet.replace("0", "1");
-                        }
+                    } else {
+                        return false;
                     }
-                });
-            });
+                }
+            }
 
             // write to file
             FileWriter fw = new FileWriter(fileName);
@@ -322,4 +291,3 @@ public class JsonFileRepository implements JsonFileService {
         }
     }
 }
-

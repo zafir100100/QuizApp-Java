@@ -119,7 +119,7 @@ public class Login extends javax.swing.JFrame {
         boolean adminLoginAttempt = adminService.getLogin(username.getText(), String.valueOf(password.getPassword()));
         if (studentLoginAttempt) {
             this.dispose();
-            new StudentDashboard().setVisible(true);
+            new StudentDashboard(username.getText()).setVisible(true);
         } else if (adminLoginAttempt) {
             this.dispose();
             new AdminDashboard().setVisible(true);

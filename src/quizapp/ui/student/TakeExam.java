@@ -4,6 +4,14 @@
  */
 package quizapp.ui.student;
 
+import java.util.List;
+import java.util.Map;
+import javax.swing.JOptionPane;
+import repositories.QuestionRepository;
+import repositories.StudentRepository;
+import services.QuestionService;
+import services.StudentService;
+
 /**
  *
  * @author x
@@ -13,8 +21,57 @@ public class TakeExam extends javax.swing.JFrame {
     /**
      * Creates new form TakeExam
      */
-    public TakeExam() {
+    private final  String username;
+    private int myScore;
+    private int currentQuestionNumber;
+    private String currentAnswer;
+    private int totalQuestions;
+    private final QuestionService questionService;
+    private final StudentService studentService;
+    private List<Map<String, String>> questions;
+
+    public TakeExam(String username) {
         initComponents();
+        this.username = username;
+        myScore = 0;
+        currentQuestionNumber = 1;
+        totalQuestions = 5;
+        finishLabel.setVisible(false);
+        finish.setVisible(false);
+        scoreLabel.setVisible(false);
+        score.setVisible(false);
+        questionService = new QuestionRepository();
+        questions = questionService.getRandomQuestions(totalQuestions);
+        studentService = new StudentRepository();
+        loadQuestion();
+    }
+
+    private void loadQuestion() {
+        Map<String, String> currentQuestionMap = questions.get(currentQuestionNumber - 1);
+        question.setText(currentQuestionMap.get("question"));
+        optionA.setText(currentQuestionMap.get("optionA"));
+        optionB.setText(currentQuestionMap.get("optionB"));
+        optionC.setText(currentQuestionMap.get("optionC"));
+        optionD.setText(currentQuestionMap.get("optionD"));
+        currentAnswer = currentQuestionMap.get("answer");
+    }
+
+    private void loadNextQuestion() {
+        if (answer.getSelectedItem().toString().equals(currentAnswer)) {
+            myScore++;
+        }
+        if (currentQuestionNumber < totalQuestions) {
+            currentQuestionNumber++;
+            loadQuestion();
+        } else {
+            loadQuestion();
+            displayScore();
+        }
+    }
+
+    private void displayScore() {
+        finishLabel.setVisible(true);
+        finish.setVisible(true);
     }
 
     /**
@@ -26,21 +83,151 @@ public class TakeExam extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        submit = new javax.swing.JButton();
+        finish = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        finishLabel = new javax.swing.JLabel();
+        score = new javax.swing.JLabel();
+        scoreLabel = new javax.swing.JLabel();
+        answer = new javax.swing.JComboBox<>();
+        question = new javax.swing.JLabel();
+        optionA = new javax.swing.JLabel();
+        optionB = new javax.swing.JLabel();
+        optionC = new javax.swing.JLabel();
+        optionD = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        submit.setText("Submit");
+        submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitActionPerformed(evt);
+            }
+        });
+
+        finish.setText("Finish");
+        finish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                finishActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Question");
+
+        jLabel2.setText("A)");
+
+        jLabel3.setText("B)");
+
+        jLabel4.setText("C)");
+
+        jLabel5.setText("D)");
+
+        jLabel6.setText("Answer");
+
+        finishLabel.setText("Press finish button to finish the exam");
+
+        scoreLabel.setText("Score: ");
+
+        answer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "a", "b", "c", "d" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(optionC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(finishLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(scoreLabel)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(score, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel6))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(optionB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel2)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(finish, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(submit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(answer, 0, 369, Short.MAX_VALUE)
+                                        .addComponent(optionA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(optionD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(question, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(question, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(optionA, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(optionB, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(optionC, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(optionD, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addComponent(answer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(submit)
+                .addGap(18, 18, 18)
+                .addComponent(finishLabel)
+                .addGap(18, 18, 18)
+                .addComponent(finish)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(score, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
+        // TODO add your handling code here:
+        loadNextQuestion();
+    }//GEN-LAST:event_submitActionPerformed
+
+    private void finishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finishActionPerformed
+        // TODO add your handling code here:
+        scoreLabel.setVisible(true);
+        score.setVisible(true);
+        score.setText("" + myScore);
+        studentService.updateStudentMarks("a", "" + myScore);
+    }//GEN-LAST:event_finishActionPerformed
 
     /**
      * @param args the command line arguments
@@ -72,11 +259,28 @@ public class TakeExam extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TakeExam().setVisible(true);
+                new TakeExam("").setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> answer;
+    private javax.swing.JButton finish;
+    private javax.swing.JLabel finishLabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel optionA;
+    private javax.swing.JLabel optionB;
+    private javax.swing.JLabel optionC;
+    private javax.swing.JLabel optionD;
+    private javax.swing.JLabel question;
+    private javax.swing.JLabel score;
+    private javax.swing.JLabel scoreLabel;
+    private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
 }

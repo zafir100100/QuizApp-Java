@@ -1,5 +1,6 @@
 package repositories;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,6 +36,29 @@ public class QuestionRepository implements QuestionService {
             System.out.println(ex.getMessage());
             ex.printStackTrace();
             return false;
+        }
+    }
+
+    @Override
+    public List<Map<String, String>> getRandomQuestions(int numberOfQuestions) {
+        try {
+            List<String> keys = new ArrayList<>();
+            keys.add("question");
+            keys.add("optionA");
+            keys.add("optionB");
+            keys.add("optionC");
+            keys.add("optionD");
+            keys.add("answer");
+            List<Map<String, String>> questions = jfs.getRandomRows(keys, numberOfQuestions);
+            if (!questions.isEmpty()) {
+                return questions;
+            }
+            return null;
+        } catch (Exception ex) {
+            System.out.println("Random Question Retrival Failed. Exception occured");
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
+            return null;
         }
     }
 }

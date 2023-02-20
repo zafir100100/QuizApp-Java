@@ -4,6 +4,15 @@
  */
 package quizapp.ui.admin;
 
+import java.util.List;
+import java.util.Map;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import repositories.AdminRepository;
+import services.AdminService;
+
 /**
  *
  * @author x
@@ -13,8 +22,27 @@ public class ViewResult extends javax.swing.JFrame {
     /**
      * Creates new form ViewResult
      */
+    private final AdminService adminService;
+
     public ViewResult() {
         initComponents();
+        this.adminService = new AdminRepository();
+        getMarks();
+    }
+
+    private void getMarks() {
+        // remove past rows
+        DefaultTableModel model = (DefaultTableModel) marksTable.getModel();
+        model.setRowCount(0);
+        // get data
+        List<Map<String, String>> marks = adminService.getStudentMarks();
+        if (!marks.isEmpty()) {
+            marks.forEach(item -> {
+                model.addRow(new Object[]{item.get("username"), item.get("marks")});
+            });
+        } else {
+            JOptionPane.showMessageDialog(null, "No student found");
+        }
     }
 
     /**
@@ -27,22 +55,22 @@ public class ViewResult extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        marksTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        marksTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Username", "Marks"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(marksTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,6 +129,6 @@ public class ViewResult extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable marksTable;
     // End of variables declaration//GEN-END:variables
 }

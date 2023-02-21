@@ -33,10 +33,10 @@
 ![9](https://github.com/zafir100100/QuizApp-Java/blob/master/resources/screenshots/9.png)
 
 ## Admin credential:
-  - username: admin
-  - password: admin
+  - default username: admin
+  - default password: admin
 
 ## Student credential:
   - You can change student credential from resources/databases/users.json
-  - username: a
-  - password: 1
+  - default username: a
+  - default password: 1

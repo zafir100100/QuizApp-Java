@@ -5,7 +5,8 @@ An application for exam managment.
 ---
 
 ## Video Output:
-https://raw.githubusercontent.com/zafir100100/QuizApp-Java/master/resources/videos/demo.mp4
+https://user-images.githubusercontent.com/55599023/220368774-14770323-c193-43d0-9a0b-fe293589aabd.mp4
+
 
 ## Scenerio
 1. Run the application from netbeans

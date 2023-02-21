@@ -80,7 +80,7 @@ public class ViewResult extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Title 1", "Title 2"
+                "username", "marks"
             }
         ));
         jScrollPane1.setViewportView(marksTable);

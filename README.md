@@ -1,8 +1,21 @@
 # QuizApp-Java
 
-An application for exam managment .
+An application for exam managment.
 
 ---
+
+## Video Output:
+https://github.com/zafir100100/QuizApp-Java/blob/master/resources/videos/demo.mp4
+
+## Scenerio
+1. Run the application from netbeans
+2. Login as admin (username: admin	password: admin)
+3. Add a student (username: alex	password: alex)
+4. Add a question
+5. View marks of all student
+6. close and run the app again and login as student this time
+7. participate in exam
+8. you will see marks at the end of exam
 
 ## How to run this project
 - download Netbeans (8.2 or greater version)

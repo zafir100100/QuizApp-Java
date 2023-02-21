@@ -5,7 +5,7 @@ An application for exam managment.
 ---
 
 ## Video Output:
-https://user-images.githubusercontent.com/55599023/220368774-14770323-c193-43d0-9a0b-fe293589aabd.mp4
+https://user-images.githubusercontent.com/55599023/220382684-7f2b4989-53d8-49da-9f98-6870140b1e98.mp4
 
 
 ## Scenerio

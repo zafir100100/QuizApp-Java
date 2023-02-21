@@ -14,6 +14,7 @@
   - Admin can add students
   - Add Questions to question bank
   - View marks of student
+  
 ## Student Features:
   - Can participate in exam
   - View result instantly after exam
@@ -30,3 +31,12 @@
 ![7](https://github.com/zafir100100/QuizApp-Java/blob/master/resources/screenshots/7.png)
 ![8](https://github.com/zafir100100/QuizApp-Java/blob/master/resources/screenshots/8.png)
 ![9](https://github.com/zafir100100/QuizApp-Java/blob/master/resources/screenshots/9.png)
+
+## Admin credential:
+  - username: admin
+  - password: admin
+
+## Student credential:
+  - You can change student credential from resources/databases/users.json
+  - username: a
+  - password: 1

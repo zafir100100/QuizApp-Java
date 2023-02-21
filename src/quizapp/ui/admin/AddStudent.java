@@ -75,7 +75,7 @@ public class AddStudent extends javax.swing.JFrame {
             }
         });
         jPanel1.add(username);
-        username.setBounds(200, 120, 160, 31);
+        username.setBounds(200, 120, 160, 25);
 
         password.setBackground(new java.awt.Color(0, 0, 0));
         password.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -130,12 +130,7 @@ public class AddStudent extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
-        boolean isCreated = adminService.createStudent(username.getText(), String.valueOf(password.getPassword()));
-        if (isCreated) {
-            JOptionPane.showMessageDialog(null, "Student addition successful!");
-        } else {
-            JOptionPane.showMessageDialog(null, "Student addition failed!");
-        }
+
     }//GEN-LAST:event_usernameActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
@@ -144,7 +139,12 @@ public class AddStudent extends javax.swing.JFrame {
     }//GEN-LAST:event_backActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        
+        boolean isCreated = adminService.createStudent(username.getText(), String.valueOf(password.getPassword()));
+        if (isCreated) {
+            JOptionPane.showMessageDialog(null, "Student addition successful!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Student addition failed!");
+        }
     }//GEN-LAST:event_submitActionPerformed
 
     /**

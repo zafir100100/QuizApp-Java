@@ -1,5 +1,9 @@
 # QuizApp-Java
 
+An application for exam managment .
+
+---
+
 ## How to run this project
 - download Netbeans (8.2 or greater version)
 - clone this repo and open it from netbeans using File->Open Project

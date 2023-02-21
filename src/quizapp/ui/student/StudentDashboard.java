@@ -37,7 +37,6 @@ public class StudentDashboard extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(480, 360));
         setMinimumSize(new java.awt.Dimension(480, 360));
-        setPreferredSize(new java.awt.Dimension(480, 360));
         setResizable(false);
 
         jPanel1.setMaximumSize(new java.awt.Dimension(480, 360));
@@ -46,9 +45,9 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Stdent Dashboard");
+        jLabel1.setText("Student Dashboard");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(130, 20, 210, 50);
+        jLabel1.setBounds(130, 20, 230, 50);
 
         jLabel2.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));

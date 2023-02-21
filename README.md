@@ -29,17 +29,3 @@
 ![7](https://github.com/zafir100100/QuizApp-Java/blob/master/resources/screenshots/7.png)
 ![8](https://github.com/zafir100100/QuizApp-Java/blob/master/resources/screenshots/8.png)
 ![9](https://github.com/zafir100100/QuizApp-Java/blob/master/resources/screenshots/9.png)
-
-  
-
-
-
-
-
-
-
-
-
-  - Link (https://github.com/zafir100100/create-postman-newman-report-with-test-cases-and-docs/blob/main/assets/test-cases/zafir/24-01-2023/test-cases/test-cases.xlsx)
-
-![181](https://github.com/zafir100100/create-postman-newman-report-with-test-cases-and-docs/blob/main/assets/newman-report/zafir/24-01-2023/newman-report.png)

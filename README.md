@@ -8,6 +8,7 @@
 ## Technology used:
 - Java
 - Ant build tools
+- Netbeans
 
 ## Admin Features:
   - Admin can add students

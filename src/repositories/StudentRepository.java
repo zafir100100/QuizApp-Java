@@ -26,25 +26,24 @@ public class StudentRepository implements StudentService {
             }
         };
         List<Map<String, String>> students = jfs.getAllRowByCondition(keys, conditions);
-
+        
         if (!students.isEmpty() && students.size() >= 2) {
-            for (Map<String, String> element : students) {
-                if (element.containsKey("username")) {
-                    if (element.get("username").equals(username)) {
-
-                    } else {
-                        return false;
-                    }
-                } else if (element.containsKey("password")) {
-                    if (element.get("password").equals(password)) {
-
-                    } else {
-                        return false;
-                    }
+            Map<String, String> usernameMap = new HashMap<String, String>() {
+                {
+                    put("username", username);
                 }
+            };
+            Map<String, String> passwordMap = new HashMap<String, String>() {
+                {
+                    put("password", password);
+                }
+            };
+
+            if (students.contains(usernameMap) && students.contains(passwordMap)) {
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     @Override

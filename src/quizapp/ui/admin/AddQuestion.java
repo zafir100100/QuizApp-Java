@@ -34,153 +34,184 @@ public class AddQuestion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        optionA = new javax.swing.JTextArea();
-        submit = new javax.swing.JButton();
-        back = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        question = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        optionC = new javax.swing.JTextArea();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        optionD = new javax.swing.JTextArea();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        optionB = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        optionD = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        question = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        optionA = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        optionB = new javax.swing.JTextArea();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        optionC = new javax.swing.JTextArea();
+        back = new javax.swing.JButton();
+        submit = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         answer = new javax.swing.JComboBox<>();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(384, 800));
+        setMinimumSize(new java.awt.Dimension(384, 800));
 
+        jPanel1.setMaximumSize(new java.awt.Dimension(384, 800));
+        jPanel1.setMinimumSize(new java.awt.Dimension(384, 800));
+        jPanel1.setLayout(null);
+
+        jLabel2.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Add Question");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(110, 0, 160, 40);
+
+        jLabel3.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("(D)");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(10, 510, 20, 40);
+
+        optionD.setBackground(new java.awt.Color(0, 0, 0));
+        optionD.setColumns(20);
+        optionD.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        optionD.setForeground(new java.awt.Color(255, 255, 255));
+        optionD.setRows(5);
+        jScrollPane1.setViewportView(optionD);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(10, 540, 360, 70);
+
+        jLabel4.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Answer");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(10, 620, 60, 30);
+
+        question.setBackground(new java.awt.Color(0, 0, 0));
+        question.setColumns(20);
+        question.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        question.setForeground(new java.awt.Color(255, 255, 255));
+        question.setRows(5);
+        jScrollPane2.setViewportView(question);
+
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(10, 70, 360, 100);
+
+        jLabel5.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("(A)");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(10, 180, 20, 30);
+
+        optionA.setBackground(new java.awt.Color(0, 0, 0));
         optionA.setColumns(20);
+        optionA.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        optionA.setForeground(new java.awt.Color(255, 255, 255));
         optionA.setRows(5);
-        jScrollPane1.setViewportView(optionA);
+        jScrollPane3.setViewportView(optionA);
 
-        submit.setText("Submit");
-        submit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitActionPerformed(evt);
-            }
-        });
+        jPanel1.add(jScrollPane3);
+        jScrollPane3.setBounds(10, 210, 360, 70);
 
+        jLabel6.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("(B)");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(10, 290, 20, 30);
+
+        optionB.setBackground(new java.awt.Color(0, 0, 0));
+        optionB.setColumns(20);
+        optionB.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        optionB.setForeground(new java.awt.Color(255, 255, 255));
+        optionB.setRows(5);
+        jScrollPane4.setViewportView(optionB);
+
+        jPanel1.add(jScrollPane4);
+        jScrollPane4.setBounds(10, 320, 360, 70);
+
+        jLabel7.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("(C)");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(10, 400, 20, 30);
+
+        optionC.setBackground(new java.awt.Color(0, 0, 0));
+        optionC.setColumns(20);
+        optionC.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        optionC.setForeground(new java.awt.Color(255, 255, 255));
+        optionC.setRows(5);
+        jScrollPane5.setViewportView(optionC);
+
+        jPanel1.add(jScrollPane5);
+        jScrollPane5.setBounds(10, 430, 360, 70);
+
+        back.setBackground(new java.awt.Color(153, 153, 153));
+        back.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        back.setForeground(new java.awt.Color(0, 0, 0));
         back.setText("Back");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
             }
         });
+        jPanel1.add(back);
+        back.setBounds(10, 730, 160, 50);
 
-        question.setColumns(20);
-        question.setRows(5);
-        jScrollPane2.setViewportView(question);
+        submit.setBackground(new java.awt.Color(0, 153, 0));
+        submit.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        submit.setForeground(new java.awt.Color(0, 0, 0));
+        submit.setText("Submit");
+        submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitActionPerformed(evt);
+            }
+        });
+        jPanel1.add(submit);
+        submit.setBounds(200, 730, 170, 50);
 
-        optionC.setColumns(20);
-        optionC.setRows(5);
-        jScrollPane3.setViewportView(optionC);
+        jLabel8.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Question");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(10, 40, 70, 30);
 
-        optionD.setColumns(20);
-        optionD.setRows(5);
-        jScrollPane4.setViewportView(optionD);
-
-        optionB.setColumns(20);
-        optionB.setRows(5);
-        jScrollPane5.setViewportView(optionB);
-
-        jLabel1.setText("Question");
-
-        jLabel2.setText("A)");
-
-        jLabel3.setText("B)");
-
-        jLabel4.setText("C)");
-
-        jLabel5.setText("D)");
-
-        jLabel6.setText("Answer");
-
+        answer.setBackground(new java.awt.Color(255, 255, 255));
+        answer.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        answer.setForeground(new java.awt.Color(0, 0, 0));
         answer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "a", "b", "c", "d" }));
+        jPanel1.add(answer);
+        answer.setBounds(10, 660, 360, 40);
+
+        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\Touhid\\Desktop\\QuizApp-Java-master\\resources\\bakgrounds\\add-question.jpg")); // NOI18N
+        jPanel1.add(background);
+        background.setBounds(0, 0, 390, 800);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(submit)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(back)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel1)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel5)
-                                        .addComponent(jLabel6))
-                                    .addGap(321, 321, 321)))
-                            .addComponent(answer, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addGap(18, 18, 18)
-                .addComponent(answer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(submit)
-                    .addComponent(back))
-                .addContainerGap(61, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new AdminDashboard().setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        // TODO add your handling code here:
         boolean isAdded = questionService.addQuestion(new Question(question.getText(), optionA.getText(), optionB.getText(), optionC.getText(), optionD.getText(), answer.getSelectedItem().toString()));
         if (isAdded) {
             JOptionPane.showMessageDialog(null, "Question addition successful!");
@@ -227,12 +258,15 @@ public class AddQuestion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> answer;
     private javax.swing.JButton back;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

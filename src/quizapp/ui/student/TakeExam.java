@@ -83,151 +83,185 @@ public class TakeExam extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        submit = new javax.swing.JButton();
-        finish = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         finishLabel = new javax.swing.JLabel();
-        score = new javax.swing.JLabel();
-        scoreLabel = new javax.swing.JLabel();
-        answer = new javax.swing.JComboBox<>();
         question = new javax.swing.JLabel();
         optionA = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         optionB = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         optionC = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         optionD = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        answer = new javax.swing.JComboBox<>();
+        finish = new javax.swing.JButton();
+        scoreLabel = new javax.swing.JLabel();
+        submit = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        score = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(375, 880));
+        setMinimumSize(new java.awt.Dimension(375, 880));
+        setResizable(false);
 
-        submit.setText("Submit");
-        submit.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.setMaximumSize(new java.awt.Dimension(375, 880));
+        jPanel1.setMinimumSize(new java.awt.Dimension(375, 880));
+        jPanel1.setLayout(null);
+
+        finishLabel.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        finishLabel.setForeground(new java.awt.Color(255, 255, 255));
+        finishLabel.setText("Press finish button to finish the exam");
+        jPanel1.add(finishLabel);
+        finishLabel.setBounds(10, 710, 270, 20);
+
+        question.setBackground(new java.awt.Color(0, 0, 0));
+        question.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(question);
+        question.setBounds(10, 90, 350, 100);
+
+        optionA.setBackground(new java.awt.Color(0, 0, 0));
+        optionA.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(optionA);
+        optionA.setBounds(10, 240, 350, 50);
+
+        jLabel4.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("(A)");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(10, 220, 70, 20);
+
+        optionB.setBackground(new java.awt.Color(0, 0, 0));
+        optionB.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(optionB);
+        optionB.setBounds(10, 320, 350, 50);
+
+        jLabel6.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("(B)");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(10, 300, 70, 20);
+
+        jLabel7.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Exam");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(150, 10, 70, 30);
+
+        optionC.setBackground(new java.awt.Color(0, 0, 0));
+        optionC.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(optionC);
+        optionC.setBounds(10, 400, 350, 50);
+
+        jLabel9.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("(C)");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(10, 380, 70, 20);
+
+        optionD.setBackground(new java.awt.Color(0, 0, 0));
+        optionD.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(optionD);
+        optionD.setBounds(10, 490, 350, 50);
+
+        jLabel11.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("(D)");
+        jPanel1.add(jLabel11);
+        jLabel11.setBounds(10, 470, 70, 20);
+
+        jLabel12.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Question");
+        jPanel1.add(jLabel12);
+        jLabel12.setBounds(10, 70, 70, 20);
+
+        answer.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        answer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "a", "b", "c", "d" }));
+        answer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitActionPerformed(evt);
+                answerActionPerformed(evt);
             }
         });
+        jPanel1.add(answer);
+        answer.setBounds(10, 600, 340, 29);
 
+        finish.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        finish.setForeground(new java.awt.Color(0, 0, 0));
         finish.setText("Finish");
         finish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 finishActionPerformed(evt);
             }
         });
+        jPanel1.add(finish);
+        finish.setBounds(10, 740, 340, 31);
 
-        jLabel1.setText("Question");
+        scoreLabel.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        scoreLabel.setForeground(new java.awt.Color(255, 255, 255));
+        scoreLabel.setText("Score :");
+        jPanel1.add(scoreLabel);
+        scoreLabel.setBounds(10, 800, 50, 20);
 
-        jLabel2.setText("A)");
+        submit.setBackground(new java.awt.Color(51, 153, 0));
+        submit.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        submit.setForeground(new java.awt.Color(0, 0, 0));
+        submit.setText("Submit");
+        submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitActionPerformed(evt);
+            }
+        });
+        jPanel1.add(submit);
+        submit.setBounds(10, 640, 340, 31);
 
-        jLabel3.setText("B)");
+        jLabel14.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Answer");
+        jPanel1.add(jLabel14);
+        jLabel14.setBounds(10, 570, 70, 20);
 
-        jLabel4.setText("C)");
+        score.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        score.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(score);
+        score.setBounds(70, 790, 70, 40);
 
-        jLabel5.setText("D)");
-
-        jLabel6.setText("Answer");
-
-        finishLabel.setText("Press finish button to finish the exam");
-
-        scoreLabel.setText("Score: ");
-
-        answer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "a", "b", "c", "d" }));
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quizapp/ui/student/takeExam-page.jpg"))); // NOI18N
+        jPanel1.add(background);
+        background.setBounds(0, 0, 380, 880);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(optionC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(finishLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(scoreLabel)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(score, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel6))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(optionB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel2)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(finish, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(submit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addComponent(answer, 0, 369, Short.MAX_VALUE)
-                                        .addComponent(optionA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(optionD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(question, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(question, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(optionA, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(optionB, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(optionC, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5)
-                .addGap(18, 18, 18)
-                .addComponent(optionD, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addGap(18, 18, 18)
-                .addComponent(answer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addComponent(submit)
-                .addGap(18, 18, 18)
-                .addComponent(finishLabel)
-                .addGap(18, 18, 18)
-                .addComponent(finish)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(score, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
-                .addContainerGap(28, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        // TODO add your handling code here:
-        loadNextQuestion();
-    }//GEN-LAST:event_submitActionPerformed
-
     private void finishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finishActionPerformed
-        // TODO add your handling code here:
         scoreLabel.setVisible(true);
         score.setVisible(true);
         score.setText("" + myScore);
         studentService.updateStudentMarks("a", "" + myScore);
     }//GEN-LAST:event_finishActionPerformed
+
+    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
+        loadNextQuestion();
+    }//GEN-LAST:event_submitActionPerformed
+
+    private void answerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_answerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -266,14 +300,17 @@ public class TakeExam extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> answer;
+    private javax.swing.JLabel background;
     private javax.swing.JButton finish;
     private javax.swing.JLabel finishLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel optionA;
     private javax.swing.JLabel optionB;
     private javax.swing.JLabel optionC;

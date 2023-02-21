@@ -33,90 +33,119 @@ public class AddStudent extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        username = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        username = new javax.swing.JTextField();
         password = new javax.swing.JPasswordField();
-        submit = new javax.swing.JButton();
         back = new javax.swing.JButton();
+        submit = new javax.swing.JButton();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(480, 360));
+        setMinimumSize(new java.awt.Dimension(480, 360));
 
-        jLabel1.setText("username");
+        jPanel1.setMaximumSize(new java.awt.Dimension(480, 360));
+        jPanel1.setMinimumSize(new java.awt.Dimension(480, 360));
+        jPanel1.setLayout(null);
 
-        jLabel2.setText("password");
+        jLabel1.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        jLabel1.setText("Add Student");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(160, 40, 150, 40);
 
-        submit.setText("submit");
-        submit.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel2.setText("Password");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(110, 170, 80, 30);
+
+        jLabel3.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel3.setText("Username");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(110, 120, 80, 30);
+
+        username.setBackground(new java.awt.Color(0, 0, 0));
+        username.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        username.setForeground(new java.awt.Color(255, 255, 255));
+        username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitActionPerformed(evt);
+                usernameActionPerformed(evt);
             }
         });
+        jPanel1.add(username);
+        username.setBounds(200, 120, 160, 31);
 
-        back.setText("back");
+        password.setBackground(new java.awt.Color(0, 0, 0));
+        password.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        password.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(password);
+        password.setBounds(200, 170, 160, 30);
+
+        back.setBackground(new java.awt.Color(153, 153, 153));
+        back.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        back.setForeground(new java.awt.Color(0, 0, 0));
+        back.setText("Back");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
             }
         });
+        jPanel1.add(back);
+        back.setBounds(110, 250, 120, 40);
+
+        submit.setBackground(new java.awt.Color(51, 153, 0));
+        submit.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        submit.setForeground(new java.awt.Color(0, 0, 0));
+        submit.setText("Submit");
+        submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitActionPerformed(evt);
+            }
+        });
+        jPanel1.add(submit);
+        submit.setBounds(240, 250, 120, 40);
+
+        background.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quizapp/ui/admin/addStudent-page.jpg"))); // NOI18N
+        background.setMaximumSize(new java.awt.Dimension(480, 360));
+        background.setMinimumSize(new java.awt.Dimension(480, 360));
+        background.setPreferredSize(new java.awt.Dimension(480, 360));
+        jPanel1.add(background);
+        background.setBounds(0, 0, 480, 360);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(91, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(username, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                    .addComponent(password))
-                .addGap(131, 131, 131))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(140, 140, 140)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(back)
-                    .addComponent(submit))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addComponent(submit)
-                .addGap(30, 30, 30)
-                .addComponent(back)
-                .addContainerGap(42, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        // TODO add your handling code here:
+    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         boolean isCreated = adminService.createStudent(username.getText(), String.valueOf(password.getPassword()));
         if (isCreated) {
             JOptionPane.showMessageDialog(null, "Student addition successful!");
         } else {
             JOptionPane.showMessageDialog(null, "Student addition failed!");
         }
-    }//GEN-LAST:event_submitActionPerformed
+    }//GEN-LAST:event_usernameActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new AdminDashboard().setVisible(true);
     }//GEN-LAST:event_backActionPerformed
+
+    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
+        
+    }//GEN-LAST:event_submitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,8 +184,11 @@ public class AddStudent extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
+    private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField password;
     private javax.swing.JButton submit;
     private javax.swing.JTextField username;

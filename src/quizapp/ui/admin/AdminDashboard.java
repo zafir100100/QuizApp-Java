@@ -26,77 +26,95 @@ public class AdminDashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        viewResult = new javax.swing.JButton();
         addStudent = new javax.swing.JButton();
         addQuestion = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(480, 360));
+        setMinimumSize(new java.awt.Dimension(480, 360));
 
+        jPanel1.setMaximumSize(new java.awt.Dimension(480, 360));
+        jPanel1.setMinimumSize(new java.awt.Dimension(480, 360));
+        jPanel1.setLayout(null);
+
+        jLabel2.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Admin Dashboard");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(140, 30, 210, 40);
+
+        viewResult.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        viewResult.setForeground(new java.awt.Color(0, 0, 0));
+        viewResult.setText("View Result");
+        viewResult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewResultActionPerformed(evt);
+            }
+        });
+        jPanel1.add(viewResult);
+        viewResult.setBounds(160, 240, 160, 50);
+
+        addStudent.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        addStudent.setForeground(new java.awt.Color(0, 0, 0));
         addStudent.setText("Add Student");
         addStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addStudentActionPerformed(evt);
             }
         });
+        jPanel1.add(addStudent);
+        addStudent.setBounds(160, 100, 160, 50);
 
+        addQuestion.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        addQuestion.setForeground(new java.awt.Color(0, 0, 0));
         addQuestion.setText("Add Question");
         addQuestion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addQuestionActionPerformed(evt);
             }
         });
+        jPanel1.add(addQuestion);
+        addQuestion.setBounds(160, 170, 160, 50);
 
-        jButton1.setText("View Result");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quizapp/ui/admin/adminDashboard-page.jpg"))); // NOI18N
+        background.setMaximumSize(new java.awt.Dimension(480, 360));
+        background.setMinimumSize(new java.awt.Dimension(480, 360));
+        background.setPreferredSize(new java.awt.Dimension(480, 360));
+        jPanel1.add(background);
+        background.setBounds(0, 0, 480, 360);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(134, 134, 134)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(addQuestion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(addStudent)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(163, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(addStudent)
-                .addGap(50, 50, 50)
-                .addComponent(addQuestion)
-                .addGap(55, 55, 55)
-                .addComponent(jButton1)
-                .addContainerGap(65, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void addStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addStudentActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new AddStudent().setVisible(true);
     }//GEN-LAST:event_addStudentActionPerformed
 
     private void addQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addQuestionActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new AddQuestion().setVisible(true);
     }//GEN-LAST:event_addQuestionActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-         this.dispose();
+    private void viewResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewResultActionPerformed
+        this.dispose();
         new ViewResult().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_viewResultActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,6 +154,9 @@ public class AdminDashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addQuestion;
     private javax.swing.JButton addStudent;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel background;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton viewResult;
     // End of variables declaration//GEN-END:variables
 }

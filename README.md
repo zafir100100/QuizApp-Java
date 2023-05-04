@@ -62,3 +62,6 @@ https://user-images.githubusercontent.com/55599023/220412763-49ba87d6-8c1c-477a-
   - You can change student credential from resources/databases/users.json
   - default username: a
   - default password: 1
+
+## Questions
+- Question are located in resources/databases/questions.json

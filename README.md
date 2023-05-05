@@ -68,3 +68,7 @@ https://user-images.githubusercontent.com/55599023/220412763-49ba87d6-8c1c-477a-
 
 ## Marks
 - Marks are located in resources/databases/users.json
+
+## Major Issues
+- Test score is not showing in UI and not updated in json if don't use jdk 8 and netbeans 8.2 
+  (Apache Netbeans <= 16 seems ok but might generate issues)

@@ -28,9 +28,9 @@ https://user-images.githubusercontent.com/55599023/220412763-49ba87d6-8c1c-477a-
 - press the green run button
 
 ## Technology used:
-- Java
+- Java 8
 - Ant build tools
-- Netbeans
+- Netbeans 8.2
 
 ## Admin Features:
   - Admin can add students
